@@ -13,7 +13,7 @@ The Ethereum platform enables developers to build powerful decentralized applica
 [[bitcoin_comparison]]
 === Compared to Bitcoin
 
-((("Bitcoin","Ethereum compared to")))((("Ethereum (generally)","Bitcoin compared to")))Many people will come to Ethereum with some prior experience of cryptocurrencies, specifically Bitcoin. Ethereum shares many common elements with other open blockchains: a peer-to-peer network connecting participants, a Byzantine fault&#x2013;tolerant consensus algorithm for synchronization of state updates (a proof-of-work blockchain), the use of cryptographic primitives such as digital signatures and hashes, and a digital currency (ether).
+((("Bitcoin","Ethereum compared to")))((("Ethereum (generally)","Bitcoin compared to")))Many people will come to Ethereum with some prior experience of cryptocurrencies, specifically Bitcoin. Ethereum shares many common elements with other open blockchains: a peer-to-peer network connecting participants, a Byzantine fault&#x2013;tolerant consensus algorithm for synchronization of state updates, the use of cryptographic primitives such as digital signatures and hashes, and a digital currency (ether).
 
 Yet in many ways, both the purpose and construction of Ethereum are strikingly different from those of the open blockchains that preceded it, including Bitcoin.
 
@@ -32,7 +32,7 @@ Unlike Bitcoin, which has a very limited scripting language, Ethereum is designe
 * A state machine that processes transactions according to the consensus rules
 * A chain of cryptographically secured blocks that acts as a journal of all the verified and accepted state transitions
 * A consensus algorithm that decentralizes control over the blockchain, by forcing participants to cooperate in the enforcement of the consensus rules
-* A game-theoretically sound incentivization scheme (e.g., proof-of-work costs plus block rewards) to economically secure the state machine in an open pass:[<span class="keep-together">environment</span>]
+* A game-theoretically sound incentivization scheme (e.g., proof-of-stake rewards plus slashings) to economically secure the state machine in an open pass:[<span class="keep-together">environment</span>]
 * One or more open source software implementations of the above ("clients")
 
 All or most of these components are usually combined in a single software client. For example, in ((("Bitcoin Core")))((("bitcoind client")))Bitcoin, the reference implementation is developed by the _Bitcoin Core_ open source project and implemented as the _bitcoind_ client. In Ethereum, rather than a reference implementation there is a ((("reference specification")))_reference specification_, a mathematical description of the system in the Yellow Paper (see <<references>>). There are a number of clients, which are built according to the reference specification.
@@ -104,7 +104,9 @@ Block #9,069,000:: ((("Istanbul fork")))__Istanbul__&#x2014;An additional hard f
 
 Block #9,200,000:: ((("Muir Glacier fork")))__Muir Glacier__&#x2014;A hard fork whose sole purpose was to adjust the difficulty again due to the exponential increase introduced by Ice Age.
 
-((("Serenity")))((("Ethereum 2.0")))Two hard forks, Berlin and London, have also been announced, and we are now in the final stage of Ethereum development, codenamed Serenity. Serenity involves a profound reorganization of the infrastructure that will make Ethereum more scalable, more secure, and more sustainable. It is presented as the second version of Ethereum, "Ethereum 2.0".
+TODO: Update hard fork blocks with the merge
+
+((("Serenity")))((("Ethereum Merge")))Two hard forks, Berlin and London, have also been announced, and we are now in the final stage of Ethereum development, codenamed Serenity. Serenity involves a profound reorganization of the infrastructure that will make Ethereum more scalable, more secure, and more sustainable. It is presented as the execution layer merges with the new proof-of-stake consensus layer.
 
 
 [[general_purpose_blockchain]]
@@ -131,8 +133,10 @@ State machine:: Ethereum state transitions are processed by the _Ethereum Virtua
 
 Data structures:: Ethereum's state is stored locally on each node as a _database_ (usually Google's LevelDB), which contains the transactions and system state in a serialized hashed data structure called a _Merkle Patricia Tree_.
 
+TODO: post merge consensus algortihm
 Consensus algorithm:: Ethereum uses Bitcoin's consensus model, Nakamoto Consensus, which uses sequential single-signature blocks, weighted in importance by PoW to determine the longest chain and therefore the current state. However, there are plans to move to a PoS weighted voting system, codenamed _Casper_, in the near future.
 
+TODO: post merge economic security
 Economic security:: Ethereum currently uses a PoW algorithm called _Ethash_, but this will eventually be dropped with the move to PoS at some point in the future.
 
 Clients:: Ethereum has several interoperable implementations of the client software, the most prominent of which are _Go-Ethereum_ (_Geth_) and _Parity_.
